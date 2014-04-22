@@ -17,7 +17,7 @@ public class WekaProcessing {
     public static Classifier train() throws Exception {
         // load CSV file and convert to Arff file
         CSVLoader loader = new CSVLoader();
-        loader.setSource(new File("Data.csv"));
+        loader.setSource(new File("Data1.csv"));
         Instances data = loader.getDataSet();
         ArffSaver saver = new ArffSaver();
         saver.setInstances(data);

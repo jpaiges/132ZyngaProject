@@ -100,7 +100,7 @@ public class Runner {
 				Map<String, Object> model = new HashMap<>();
 				Scanner sc = null;
 				try {
-					sc = new Scanner(new FileReader("data1.csv"));
+					sc = new Scanner(new FileReader("data.csv"));
 				} catch (FileNotFoundException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
