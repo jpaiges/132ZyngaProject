@@ -6,6 +6,13 @@ import java.awt.BorderLayout;
 import java.io.*;
 import java.util.Random;
 
+import static spark.Spark.*;
+
+import spark.Request;
+import spark.Response;
+import spark.Route;
+
+
 import weka.core.*;
 import weka.classifiers.bayes.NaiveBayes;
 import weka.classifiers.evaluation.ThresholdCurve;
@@ -15,9 +22,10 @@ import weka.gui.visualize.ThresholdVisualizePanel;
 
 public class WekaProcessing {
     public static Classifier train() throws Exception {
+    	setPort(5678);
         // load CSV file and convert to Arff file
         CSVLoader loader = new CSVLoader();
-        loader.setSource(new File("Data1.csv"));
+        loader.setSource(new File("Data.csv"));
         Instances data = loader.getDataSet();
         ArffSaver saver = new ArffSaver();
         saver.setInstances(data);

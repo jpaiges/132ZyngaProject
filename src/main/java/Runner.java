@@ -2,6 +2,7 @@ package main.java;
 
 import static spark.Spark.*;
 import spark.*;
+
 import spark.template.velocity.VelocityRoute;
 import weka.classifiers.Classifier;
 import weka.core.Attribute;
@@ -70,7 +71,7 @@ public class Runner {
 		//these are the final value, not something we display on the page.
 		finalAttribute = attributeFields.get(attributeFields.size()-1);
 		String attributeType = attributeFieldType.get(attributeFieldType.size()-1);
-		possibilities = Arrays.asList(attributeType.substring(1, attributeType.length()-2).split(","));
+		possibilities = Arrays.asList(attributeType.substring(1, attributeType.length()-1).split(","));
 		attributeFields.remove(attributeFields.size()-1);
 		attributeFieldType.remove(attributeFieldType.size()-1);
 
@@ -100,7 +101,7 @@ public class Runner {
 				Map<String, Object> model = new HashMap<>();
 				Scanner sc = null;
 				try {
-					sc = new Scanner(new FileReader("data.csv"));
+					sc = new Scanner(new FileReader("data1.csv"));
 				} catch (FileNotFoundException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
